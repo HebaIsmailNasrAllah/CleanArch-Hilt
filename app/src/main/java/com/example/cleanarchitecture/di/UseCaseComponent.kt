@@ -1,6 +1,7 @@
 package com.example.cleanarchitecture.di
 
 import com.example.cleanarchitecture.data.MobilesRepoImpl
+import com.example.cleanarchitecture.domain.IRepo
 import com.example.cleanarchitecture.domain.usecases.UseCase
 import dagger.Module
 import dagger.Provides
@@ -11,6 +12,6 @@ import dagger.hilt.android.components.ViewModelComponent
     @InstallIn(ViewModelComponent::class)
     class UseCaseComponent {
         @Provides
-        fun provideUseCase(repo: MobilesRepoImpl): UseCase = UseCase(repo)
+        fun provideUseCase(repo: IRepo): UseCase = UseCase(repo)
 
     }
